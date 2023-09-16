@@ -23,35 +23,73 @@
        Sin embargo, es esencial consultar el informe de tasación completo para obtener una comprensión detallada y técnica de cada punto.
       </div>
 
-      <ul class="list-group">
-        <li class="list-group-item">
-          <strong>Included</strong> <%= condicionante.Status %>
-        </li>
-        <li class="list-group-item">
-          <strong>AVMKey</strong> <%= condicionante.StandarizedKey %>
-        </li>
-        <li class="list-group-item">
-          <strong>TinsaKey</strong> <%= condicionante.TinsaKey %>
-        </li>
-        <li class="list-group-item">
-          <strong>Risk</strong> <%= condicionante.Type %>
-        </li>
-        <li class="list-group-item">
-          <strong>Report text</strong> <%- condicionante.Original %>
-        </li>
-        <li class="list-group-item">
-          <strong>Summary</strong> <%- condicionante.Summary %>
-        </li>
-        <li class="list-group-item">
-          <strong>Details</strong> <%- condicionante.Details %>
-        </li>
-        <li class="list-group-item">
-          <strong>Benefits</strong> <%- condicionante.Benefits %>
-        </li>
-        <li class="list-group-item">
-          <strong>Actions</strong> <%- condicionante.Actions %>
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-6"> 
+          <ul class="list-group">
+            <li>Spanish</li>
+            <li class="list-group-item">
+              <strong>Version</strong> <%= condicionante.Status %>
+            </li>
+            <li class="list-group-item">
+              <strong>AVMId</strong> <%= condicionante.StandarizedKey %>
+            </li>
+            <li class="list-group-item">
+              <strong>Id</strong> <%= condicionante.TinsaKey %>
+            </li>
+            <li class="list-group-item">
+              <strong>Risk</strong> <%= condicionante.Type %>
+            </li>
+            <li class="list-group-item">
+              <strong>Original text</strong> <%- condicionante.Original %>
+            </li>
+            <li class="list-group-item">
+              <strong>Summary</strong> <%- condicionante.Summary %>
+            </li>
+            <li class="list-group-item">
+              <strong>Details</strong> <%- condicionante.Details %>
+            </li>
+            <li class="list-group-item">
+              <strong>Benefits</strong> <%- condicionante.Benefits %>
+            </li>
+            <li class="list-group-item">
+              <strong>Actions</strong> <%- condicionante.Actions %>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul class="list-group">
+            <li>English</li>
+            <li class="list-group-item">
+              <strong>Version</strong> <%= condicionante.Status %>
+            </li>
+            <li class="list-group-item">
+              <strong>AVMId</strong> <%= condicionante.StandarizedKey %>
+            </li>
+            <li class="list-group-item">
+              <strong>Id</strong> <%= condicionante.TinsaKey %>
+            </li>
+            <li class="list-group-item">
+              <strong>Risk</strong> <%= condicionante.Type %>
+            </li>
+            <li class="list-group-item">
+              <strong>Original text</strong> <%- condicionante.Original %>
+            </li>
+            <li class="list-group-item">
+              <strong>Summary</strong> <%- condicionante.Summary %>
+            </li>
+            <li class="list-group-item">
+              <strong>Details</strong> <%- condicionante.Details %>
+            </li>
+            <li class="list-group-item">
+              <strong>Benefits</strong> <%- condicionante.Benefits %>
+            </li>
+            <li class="list-group-item">
+              <strong>Actions</strong> <%- condicionante.Actions %>
+            </li>
+          </ul>
+        </div>
+      </div>
+     
       <a href="/" class="btn btn-primary mt-3">Volver a la lista</a>
     </div>
     <!-- Agregar enlace a Bootstrap JS desde un CDN (opcional, si se requiere funcionalidad adicional) -->
