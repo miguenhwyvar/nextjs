@@ -1,0 +1,11 @@
+body {
+    font-size: 14px;
+  }
+  .no-wrap-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Opcional: Agregar puntos suspensivos si el texto es demasiado largo */
+  }
+  p {
+    margin: 0
+  }

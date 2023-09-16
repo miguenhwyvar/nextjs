@@ -1,0 +1,70 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warnings HBTK</title>
+    <!-- Agregar enlace a Bootstrap CSS desde un CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <!-- Enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables CSS y JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+    />
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4">Warnings HBTK</h2>
+      <table id="miTabla" class="display" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>StandarizedKey</th>
+            <th>TinsaKey</th>
+            <th>Type</th>
+            <th>Summary</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <% data.forEach(function(row) { %>
+          <tr>
+            <td><span class="no-wrap-text"><%= row.Status %></span></td>
+            <td><%= row.StandarizedKey %></td>
+            <td>
+              <a href="/detail/<%= row.StandarizedKey %>"
+                ><%= row.TinsaKey %></a
+              >
+            </td>
+            <td class="text-center">
+              <%- (row.Type == 2) ? '<span class="badge bg-warning">Low</span>' : '<span class="badge bg-danger">Critical</span>' %>
+            </td>
+            <td><%- row.Summary %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      // Agrega aquí tu script para filtrar la tabla
+      $(document).ready(function () {
+        $('#miTabla').DataTable({
+          searching: true,
+          paging: false, // Desactiva la paginación
+          ordering: true,
+        });
+      });
+
+      $('.dataTables_filter input').addClass('form-control');
+    </script>
+  </body>
+</html>
