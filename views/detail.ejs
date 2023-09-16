@@ -14,9 +14,14 @@
   </head>
   <body>
     <div class="container mt-5">
-      <h1 class="mb-4">
-        Detalle <%- (condicionante.Type == 2) ? 'la advertencia' : 'del condicionante' %>
+      <h2 class="mb-4">
+        Detalle <%- (condicionante.Type == 2) ? 'de la advertencia' : 'del condicionante' %>
       </h1>
+
+      <div class="alert alert-warning" role="alert">
+       <b>Importante:</b> Esta explicación <%- (condicionante.Type == 2) ? 'de la advertencia' : 'del condicionante' %> tiene como objetivo acercar de manera simple y directa los aspectos más relevantes del informe.
+       Sin embargo, es esencial consultar el informe de tasación completo para obtener una comprensión detallada y técnica de cada punto.
+      </div>
 
       <ul class="list-group">
         <li class="list-group-item">

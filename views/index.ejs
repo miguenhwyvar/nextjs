@@ -46,7 +46,7 @@
               >
             </td>
             <td class="text-center">
-              <%- (row.Type == 2) ? '<span class="badge bg-warning">Low</span>' : '<span class="badge bg-danger">Critical</span>' %>
+              <%- (row.Type == 2) ? '<span class="badge bg-warning">Low</span>' : (row.Type == 3) ? '<span class="badge bg-danger">High</span>' : (row.Type == 1) ? '<span class="badge bg-dark">Lowest</span>' : '<span class="badge bg-success">Info</span>' %>
             </td>
             <td><%- row.Summary %></td>
           </tr>
