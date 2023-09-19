@@ -75,8 +75,7 @@ app.post('/login', (req, res) => {
   if (usuario) {
     // Autenticación exitosa, establecer una sesión o cookie de autenticación
     // Por ejemplo, puedes establecer una cookie de sesión
-    //const tiempoExpiracion = 4 * 60 * 60 * 1000; // 4 horas en milisegundos
-    const tiempoExpiracion = 1000; // 4 horas en milisegundos
+    const tiempoExpiracion = 4 * 60 * 60 * 1000; // 4 horas en milisegundos
     res.cookie('auth', 'autenticado', { maxAge: tiempoExpiracion });
     registrarIntentoLogin(usuario.username, true);
     res.redirect('/list');
