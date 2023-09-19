@@ -24,13 +24,13 @@
   </head>
   <body>
     <div class="container mt-5">
-      <h2 class="mb-4">Warnings HBTK</h2>
+      <h3 class="mb-4">Warnings HBTK</h3>
       <table id="miTabla" class="display" class="table table-bordered">
         <thead>
           <tr>
             <th>Status</th>
-            <th>AVMId</th>
-            <th>Id</th>
+            <th>StandarizedKey</th>
+            <th>TinsaKey</th>
             <th>Type</th>
             <th>Summary</th>
           </tr>
@@ -46,9 +46,9 @@
               >
             </td>
             <td class="text-center">
-              <%- (row.Type == 2) ? '<span class="badge bg-warning">Low</span>' : (row.Type == 3) ? '<span class="badge bg-danger">High</span>' : (row.Type == 1) ? '<span class="badge bg-dark">Lowest</span>' : '<span class="badge bg-success">Info</span>' %>
+              <%- (row.Type == 2  || row.Type == 1 || row.Type == "Condicionante") ? '<span class="badge bg-danger">High</span>' : (row.Type == 3 || row.Type == "Advertencia") ? '<span class="badge bg-warning">Low</span>' : (row.Type == 1) ? '<span class="badge bg-dark">Lowest</span>' : '<span class="badge bg-success">Info</span>' %>
             </td>
-            <td><%- row.Summary %></td>
+            <td><%- (row.Summary) ? row.Summary : '<i>Not ready</i>' %></td>
           </tr>
           <% }); %>
         </tbody>
