@@ -104,7 +104,7 @@ function registrarIntentoLogin(username, success) {
   const logEntry = `${new Date().toISOString()} - Usuario: ${username}, ${
     success ? 'Inicio de sesión exitoso' : 'Intento de inicio de sesión fallido'
   }\n`;
-
+  console.info(logEntry);
   // Ruta del archivo de registro (ajústala según tu necesidad)
   const logFilePath = 'login_attempts.log';
 
